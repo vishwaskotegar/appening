@@ -2,6 +2,8 @@ import 'package:appening/controllers/user_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../all_user/show_users_screen.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -83,6 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   if (formkey.currentState!.validate()) {
                     Get.find<UserController>().createUser(
                         fullNameController.text, jobNameController.text);
+                    Get.to(() => const ShowUserScreen());
                   }
                 },
                 child: SizedBox(

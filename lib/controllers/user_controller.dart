@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:appening/models/user_data_model.dart';
-import 'package:appening/screens/all_user/show_users_screen.dart';
 import 'package:dio/dio.dart';
 import 'package:get/get.dart' as getx;
 
@@ -16,11 +15,11 @@ class UserController extends getx.GetxController {
       log(response.toString());
       getx.Get.showSnackbar(
         const getx.GetSnackBar(
+          animationDuration: Duration(milliseconds: 200),
           duration: Duration(seconds: 3),
           message: "User Created Succesfully",
         ),
       );
-      getx.Get.to(() => const ShowUserScreen());
     }
   }
 
